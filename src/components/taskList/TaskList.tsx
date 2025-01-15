@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Task, {TaskType} from "../task/Task"
 
 const TaskList: React.FC = () => {
-    const tasks: TaskType[] = [
+    const [tasks, setTasks] = useState<TaskType[]>([
         {id:1, title: "Learn React"},
         {id:2, title: "Learn React 2"},
         {id:3, title: "Learn React 3"}
-    ];
+    ]);
 
     return (
         <div>
