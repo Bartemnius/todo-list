@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie poziome */
+  align-items: center;    /* Wyśrodkowanie pionowe */
+  height: 100vh;          /* Wysokość na cały ekran */
+  background-color: #f0f0f0; /* Jasne tło */
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+div {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  margin: 10px 0;
+}
+
+ul {
+  list-style-type: none; /* Usuń punkty z listy */
+  padding: 0;
+}
+
+li {
+  background: #007acc;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
