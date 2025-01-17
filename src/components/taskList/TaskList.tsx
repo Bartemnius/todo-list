@@ -5,9 +5,9 @@ import AddTaskForm from "../addTaskForm/AddTaskForm"
 
 const TaskList: React.FC = () => {
     const [tasks, setTasks] = useState<TaskType[]>([
-        {id:1, title: "Learn React"},
-        {id:2, title: "Learn React 2"},
-        {id:3, title: "Learn React 3"}
+        {id: 1, title: "Learn React"},
+        {id: 2, title: "Learn React 2"},
+        {id: 3, title: "Learn React 3"}
     ]);
 
     const addTask = (title: string) => {
@@ -18,13 +18,17 @@ const TaskList: React.FC = () => {
         setTasks([...tasks, newTask])
     }
 
+    const removeTask = (id: number) => {
+        setTasks(tasks.filter((task) => task.id !== id));
+      };
+
     return (
         <div>
             <h2>Task List</h2>
             <AddTaskForm onAddTask={addTask} />
             <ul>
                 {tasks.map((task) => (
-                    <Task key={task.id} {...task} />
+                    <Task key={task.id} id={task.id} title={task.title} onRemove={removeTask} />
                 ))}
             </ul>
         </div>

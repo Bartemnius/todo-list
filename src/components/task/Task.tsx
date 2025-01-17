@@ -1,12 +1,23 @@
 import React from "react"
 
 export interface TaskType {
-    id:number,
-    title: string
+    id: number,
+    title: string,
 };
 
-const Task: React.FC<TaskType>  = ({title}) => {
-    return <li>{title}</li>
+interface TaskProps {
+    id: number,
+    title: string,
+    onRemove: (id: number) => void
+};
+
+const Task: React.FC<TaskProps>  = ({ id, title, onRemove }) => {
+    return (
+        <li>
+            <span>{title}</span>
+            <button onClick={() => onRemove(id)}>Delete</button>
+        </li>
+    )
 };
 
 export default Task;
