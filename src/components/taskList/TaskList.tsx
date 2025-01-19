@@ -27,16 +27,22 @@ const TaskList: React.FC = () => {
     }
 
     return (
-        <div>
-            <h2>Task List</h2>
-            <AddTaskForm onAddTask={addTask} />
-            <ul>
-                {tasks.map((task) => (
-                    <Task key={task.id} id={task.id} title={task.title} onRemove={removeTask} onUpdate={updateTask} />
-                ))}
-            </ul>
+        <div className="app-container">
+          <h2>Task List</h2>
+          <AddTaskForm onAddTask={addTask} />
+          <ul>
+            {tasks.map((task) => (
+              <Task
+                key={task.id}
+                id={task.id}
+                title={task.title}
+                onRemove={removeTask}
+                onUpdate={updateTask}
+              />
+            ))}
+          </ul>
         </div>
-    );
+      );
 };  
 
 export default TaskList;

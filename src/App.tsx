@@ -1,4 +1,6 @@
 import TaskList from "./components/taskList/TaskList";
+import './App.css';
+
 
 const App = () => {
   return (

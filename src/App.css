@@ -1,36 +1,112 @@
+/* Stylizacja całej aplikacji */
 body {
+  font-family: Arial, sans-serif; /* Przyjazna, czytelna czcionka */
+  background-color: #f5f5f5; /* Neutralny szary kolor tła */
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* Wyśrodkowanie poziome */
-  align-items: center;    /* Wyśrodkowanie pionowe */
-  height: 100vh;          /* Wysokość na cały ekran */
-  background-color: #f0f0f0; /* Jasne tło */
-  font-family: Arial, sans-serif;
-  color: #333;
+  justify-content: center; /* Wycentrowanie aplikacji poziomo */
+  align-items: center; /* Wycentrowanie aplikacji pionowo */
+  min-height: 100vh; /* Wysokość na całe okno przeglądarki */
 }
 
-div {
-  text-align: center;
+/* Główne pudełko aplikacji */
+.app-container {
+  background: white; /* Białe tło dla kontrastu */
+  border-radius: 12px; /* Zaokrąglenie rogów */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtelny cień */
   padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Szerokość aplikacji */
 }
 
-h1, h2 {
-  margin: 10px 0;
+/* Nagłówek aplikacji */
+h2 {
+  text-align: center;
+  color: #333; /* Lekko ciemny tekst */
+  margin-bottom: 20px;
 }
 
+/* Stylizacja listy zadań */
 ul {
-  list-style-type: none; /* Usuń punkty z listy */
+  list-style-type: none; /* Usunięcie kropek */
   padding: 0;
 }
 
+/* Stylizacja pojedynczego zadania */
 li {
-  background: #007acc;
+  background: #ffffff; /* Białe tło dla zadań */
+  border: 1px solid #ddd; /* Subtelna obramówka */
+  border-radius: 8px; /* Zaokrąglenie boxów */
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  display: flex; /* Flexbox dla układania elementów */
+  justify-content: space-between; /* Odstęp między treścią a przyciskami */
+  align-items: center; /* Wyrównanie pionowe */
+}
+
+/* Stylizacja przycisków */
+button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease; /* Efekt płynnej zmiany koloru */
+}
+
+/* Przycisk "Edit" */
+button.edit {
+  background-color: #ffd700; /* Złoty kolor */
+  color: #333; /* Ciemniejszy tekst */
+}
+
+button.edit:hover {
+  background-color: #ffc107; /* Jaśniejszy złoty po najechaniu */
+}
+
+/* Przycisk "Delete" */
+button.delete {
+  background-color: #ff6961; /* Czerwony */
   color: white;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
+}
+
+button.delete:hover {
+  background-color: #ff5c5c; /* Jaśniejszy czerwony */
+}
+
+/* Stylizacja formularza dodawania zadań */
+.add-task-form {
+  display: flex;
+  gap: 10px; /* Odstęp między inputem a przyciskiem */
+  margin-bottom: 20px;
+}
+
+.add-task-form input {
+  flex: 1; /* Input zajmuje maksymalną szerokość */
+  padding: 8px;
+  border: 1px solid #ddd; /* Subtelna obramówka */
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.add-task-form button {
+  background-color: #4caf50; /* Zielony */
+  color: white;
+}
+
+.add-task-form button:hover {
+  background-color: #45a049; /* Jaśniejszy zielony */
+}
+
+/* Tryb edycji */
+.edit-mode input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.edit-mode button {
+  margin-left: 5px; /* Odstęp między przyciskami */
 }

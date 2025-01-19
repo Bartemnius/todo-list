@@ -28,13 +28,12 @@ const Task: React.FC<TaskProps>  = ({ id, title, onRemove, onUpdate }) => {
 
     return (
         <li>
-        {isEditing ? (
-            <div>
-              {/* Input do edycji */}
+          {isEditing ? (
+            <div className="edit-mode">
               <input
                 type="text"
                 value={newTitle}
-                onChange={(e) => setNewTitle(e.target.value)} // Aktualizacja tymczasowego tytułu
+                onChange={(e) => setNewTitle(e.target.value)}
               />
               <button onClick={handleSave}>Save</button>
               <button onClick={() => setIsEditing(false)}>Cancel</button>
@@ -42,12 +41,18 @@ const Task: React.FC<TaskProps>  = ({ id, title, onRemove, onUpdate }) => {
           ) : (
             <div>
               <span>{title}</span>
-              <button onClick={() => setIsEditing(true)}>Edit</button>
-              <button onClick={() => onRemove(id)}>Delete</button>
+              <div>
+                <button className="edit" onClick={() => setIsEditing(true)}>
+                  Edit
+                </button>
+                <button className="delete" onClick={() => onRemove(id)}>
+                  Delete
+                </button>
+              </div>
             </div>
           )}
         </li>
-    )
+      );
 };
 
 export default Task;
