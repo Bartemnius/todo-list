@@ -1,0 +1,8 @@
+{
+    "semi": true,         // Dodawanie średników
+    "singleQuote": true,  // Używanie pojedynczych cudzysłowów
+    "tabWidth": 2,        // Dwa spacje jako wcięcie
+    "trailingComma": "es5", // Przecinki na końcu obiektów, ale tylko w ES5
+    "bracketSpacing": true // Spacje wewnątrz obiektów, np. { foo: "bar" }
+  }
+  
