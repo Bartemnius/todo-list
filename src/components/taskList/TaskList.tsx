@@ -20,7 +20,11 @@ const TaskList: React.FC = () => {
 
     const removeTask = (id: number) => {
         setTasks(tasks.filter((task) => task.id !== id));
-      };
+    };
+
+    const updateTask = (id: number, newTitle: string) => {
+        setTasks(tasks.map((task) => task.id === id ? { ...task, title: newTitle} : task)) 
+    }
 
     return (
         <div>
@@ -28,7 +32,7 @@ const TaskList: React.FC = () => {
             <AddTaskForm onAddTask={addTask} />
             <ul>
                 {tasks.map((task) => (
-                    <Task key={task.id} id={task.id} title={task.title} onRemove={removeTask} />
+                    <Task key={task.id} id={task.id} title={task.title} onRemove={removeTask} onUpdate={updateTask} />
                 ))}
             </ul>
         </div>
